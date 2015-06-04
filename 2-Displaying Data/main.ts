@@ -1,35 +1,35 @@
-/**
- * Created by Kevin on 4/26/2015.
- */
 import {Component, View, bootstrap, For, If} from 'angular2/angular2';
 
+class FriendsService{
+    names: Array<string>;
+    constructor(){
+        this.names = ["Alice", "Arrav", "Martin", "Shannon", "Ariana", "Kai"];
+    }
+}
 @Component({
-  selector: 'display'
+    selector: 'display',
+    injectables: [FriendsService]
 })
 @View({
-  template:
-'<p>My name: {{ myName }}</p>' +
-        '<p>Friends:</p>' +
-        '<ul>' +
-        '<li *for="#name of names">' +
-        '{{ name }}' +
-        '</li>' +
-        '</ul>' +
-        '<p *if="names.length > 3">You have many friends!</p>',
-  directives: [For, If]
+    template:
+    '<p>My name: {{ myName }}</p>' +
+    '<p>Friends:</p>' +
+    '<ul>' +
+    '<li *for="#name of names">' +
+    '{{ name }}' +
+    '</li>' +
+    '</ul>' +
+    '<p *if="names.length > 3">You have many friends!</p>',
+    directives: [For, If]
 })
 class DisplayComponent {
-  myName: string;
-  names: Array<string>;
+    myName: string;
+    names: Array<string>;
 
-  constructor() {
-    this.myName = "Alice";
-    this.names = ["Alice", "Harry", "Martin", "Shannon", "Ariana", "Kai"];
-  }
-
-  addTodo(name: string) {
-    this.names.push(name);
-  }
+    constructor(friendsService: FriendsService) {
+        this.myName = "Alice";
+        this.names = friendsService.names;
+    }
 }
 
 bootstrap(DisplayComponent);

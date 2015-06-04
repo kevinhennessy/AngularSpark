@@ -10,17 +10,21 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 define(["require", "exports", 'angular2/angular2'], function (require, exports, angular2_1) {
-    var DisplayComponent = (function () {
-        function DisplayComponent() {
-            this.myName = "Alice";
-            this.names = ["Alice", "Harry", "Martin", "Shannon", "Ariana", "Kai"];
+    var FriendsService = (function () {
+        function FriendsService() {
+            this.names = ["Alice", "Arrav", "Martin", "Shannon", "Ariana", "Kai"];
         }
-        DisplayComponent.prototype.addTodo = function (name) {
-            this.names.push(name);
-        };
+        return FriendsService;
+    })();
+    var DisplayComponent = (function () {
+        function DisplayComponent(friendsService) {
+            this.myName = "Alice";
+            this.names = friendsService.names;
+        }
         DisplayComponent = __decorate([
             angular2_1.Component({
-                selector: 'display'
+                selector: 'display',
+                injectables: [FriendsService]
             }),
             angular2_1.View({
                 template: '<p>My name: {{ myName }}</p>' +
@@ -33,7 +37,7 @@ define(["require", "exports", 'angular2/angular2'], function (require, exports, 
                     '<p *if="names.length > 3">You have many friends!</p>',
                 directives: [angular2_1.For, angular2_1.If]
             }), 
-            __metadata('design:paramtypes', [])
+            __metadata('design:paramtypes', [FriendsService])
         ], DisplayComponent);
         return DisplayComponent;
     })();

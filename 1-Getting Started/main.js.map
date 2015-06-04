@@ -1,1 +1,1 @@
-{"version":3,"file":"main.js","sourceRoot":"","sources":["main.ts"],"names":[],"mappings":""}
+{"version":3,"file":"main.js","sourceRoot":"","sources":["main.ts"],"names":["DisplayComponent","DisplayComponent.constructor"],"mappings":";;;;;;;;AAAA,yBAAyC,mBAAmB,CAAC,CAAA;AAE7D;IASEA;QACEC,IAAIA,CAACA,MAAMA,GAAGA,OAAOA,CAACA;IACxBA,CAACA;IAXHD;QAACA,oBAASA,CAACA;YACTA,QAAQA,EAAEA,QAAQA;SACnBA,CAACA;QACDA,eAAIA,CAACA;YACJA,QAAQA,EAAEA,gCAAgCA;SAC3CA,CAACA;yBAODA;IAADA,uBAACA;AAADA,CAACA,AAZD,IAYC;AAED,oBAAS,CAAC,gBAAgB,CAAC,CAAC"}
