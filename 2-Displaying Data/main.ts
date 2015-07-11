@@ -1,4 +1,4 @@
-import {Component, View, bootstrap, For, If} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor, NgIf} from 'angular2/angular2';
 
 class FriendsService{
     names: Array<string>;
@@ -8,28 +8,31 @@ class FriendsService{
 }
 @Component({
     selector: 'display',
-    injectables: [FriendsService]
+    appInjector: [FriendsService]
 })
 @View({
     template:
     '<p>My name: {{ myName }}</p>' +
     '<p>Friends:</p>' +
     '<ul>' +
-    '<li *for="#name of names">' +
+    '<li *ng-for="#name of names">' +
     '{{ name }}' +
     '</li>' +
     '</ul>' +
-    '<p *if="names.length > 3">You have many friends!</p>',
-    directives: [For, If]
+    '<p *ng-if="names.length > 3">You have many friends!</p>',
+    directives: [NgFor, NgIf]
 })
 class DisplayComponent {
     myName: string;
     names: Array<string>;
 
     constructor(friendsService: FriendsService) {
-        this.myName = "Alice";
+        this.myName = "Kevin";
         this.names = friendsService.names;
     }
 }
 
 bootstrap(DisplayComponent);
+
+
+

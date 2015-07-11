@@ -10,7 +10,7 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 if (typeof __metadata !== "function") __metadata = function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define(["require", "exports", "angular2/angular2", 'angular2/di', 'firebase/angularfire'], function (require, exports, angular2_1, di_1, angularfire_1) {
+define(["require", "exports", "angular2/angular2", 'firebase/angularfire'], function (require, exports, angular2_1, angularfire_1) {
     var TodoApp = (function () {
         function TodoApp(sync) {
             this.todoService = sync.asArray();
@@ -73,11 +73,11 @@ define(["require", "exports", "angular2/angular2", 'angular2/di', 'firebase/angu
                 selector: 'todo-app',
                 injectables: [
                     angularfire_1.AngularFire,
-                    di_1.bind(Firebase).toValue(new Firebase('https://webapi.firebaseio-demo.com/test'))
+                    angular2_1.bind(Firebase).toValue(new Firebase('https://webapi.firebaseio-demo.com/test'))
                 ] }),
             angular2_1.View({
                 templateUrl: 'todo.html',
-                directives: [angular2_1.For]
+                directives: [angular2_1.NgFor]
             }), 
             __metadata('design:paramtypes', [angularfire_1.AngularFire])
         ], TodoApp);

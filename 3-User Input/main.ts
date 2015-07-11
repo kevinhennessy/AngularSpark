@@ -1,4 +1,4 @@
-import {Component, View, bootstrap, For, If} from 'angular2/angular2';
+import {Component, View, bootstrap, NgFor} from 'angular2/angular2';
 
 @Component({
   selector: 'todo-list'
@@ -7,7 +7,7 @@ import {Component, View, bootstrap, For, If} from 'angular2/angular2';
   template: `
   
     <ul>
-      <li *for="#todo of todos">
+      <li *ng-for="#todo of todos">
         {{ todo }}
       </li>
     </ul>
@@ -16,7 +16,7 @@ import {Component, View, bootstrap, For, If} from 'angular2/angular2';
     <button (click)="addTodo(textbox.value)">Add Todo</button>
     
   `,
-  directives: [For, If]
+  directives: [NgFor]
 })
 class TodoList {
   todos: Array<string>;

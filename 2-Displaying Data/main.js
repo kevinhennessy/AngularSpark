@@ -18,24 +18,24 @@ define(["require", "exports", 'angular2/angular2'], function (require, exports, 
     })();
     var DisplayComponent = (function () {
         function DisplayComponent(friendsService) {
-            this.myName = "Alice";
+            this.myName = "Kevin";
             this.names = friendsService.names;
         }
         DisplayComponent = __decorate([
             angular2_1.Component({
                 selector: 'display',
-                injectables: [FriendsService]
+                appInjector: [FriendsService]
             }),
             angular2_1.View({
                 template: '<p>My name: {{ myName }}</p>' +
                     '<p>Friends:</p>' +
                     '<ul>' +
-                    '<li *for="#name of names">' +
+                    '<li *ng-for="#name of names">' +
                     '{{ name }}' +
                     '</li>' +
                     '</ul>' +
-                    '<p *if="names.length > 3">You have many friends!</p>',
-                directives: [angular2_1.For, angular2_1.If]
+                    '<p *ng-if="names.length > 3">You have many friends!</p>',
+                directives: [angular2_1.NgFor, angular2_1.NgIf]
             }), 
             __metadata('design:paramtypes', [FriendsService])
         ], DisplayComponent);

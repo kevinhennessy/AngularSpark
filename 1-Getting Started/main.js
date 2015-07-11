@@ -12,11 +12,11 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 define(["require", "exports", 'angular2/angular2'], function (require, exports, angular2_1) {
     var DisplayComponent = (function () {
         function DisplayComponent() {
-            this.myName = "Alice";
+            this.myName = "Aidan";
         }
         DisplayComponent = __decorate([
             angular2_1.Component({
-                selector: 'my-app'
+                selector: "my-app"
             }),
             angular2_1.View({
                 template: '<h1>My name: {{ myName }}</h1>'

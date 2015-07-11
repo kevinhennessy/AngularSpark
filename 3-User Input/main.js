@@ -22,8 +22,8 @@ define(["require", "exports", 'angular2/angular2'], function (require, exports, 
                 selector: 'todo-list'
             }),
             angular2_1.View({
-                template: "\n  \n    <ul>\n      <li *for=\"#todo of todos\">\n        {{ todo }}\n      </li>\n    </ul>\n    \n    <input #textbox>\n    <button (click)=\"addTodo(textbox.value)\">Add Todo</button>\n    \n  ",
-                directives: [angular2_1.For, angular2_1.If]
+                template: "\n  \n    <ul>\n      <li *ng-for=\"#todo of todos\">\n        {{ todo }}\n      </li>\n    </ul>\n    \n    <input #textbox>\n    <button (click)=\"addTodo(textbox.value)\">Add Todo</button>\n    \n  ",
+                directives: [angular2_1.NgFor]
             }), 
             __metadata('design:paramtypes', [])
         ], TodoList);

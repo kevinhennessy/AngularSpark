@@ -1,7 +1,6 @@
 /// <reference path="typings/angular2/angular2"/>
 
-import {bootstrap, Component, View, For} from "angular2/angular2";
-import {bind} from 'angular2/di';
+import {bootstrap, Component, View, NgFor, bind} from "angular2/angular2";
 import {AngularFire, FirebaseArray} from 'firebase/angularfire';
 
 @Component({
@@ -12,7 +11,7 @@ import {AngularFire, FirebaseArray} from 'firebase/angularfire';
 ]})
 @View({	
 	templateUrl: 'todo.html',
-	directives: [For]
+	directives: [NgFor]
 })
 class TodoApp{
   todoService: FirebaseArray;
