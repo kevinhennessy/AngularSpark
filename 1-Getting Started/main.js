@@ -12,7 +12,7 @@ if (typeof __metadata !== "function") __metadata = function (k, v) {
 define(["require", "exports", 'angular2/angular2'], function (require, exports, angular2_1) {
     var DisplayComponent = (function () {
         function DisplayComponent() {
-            this.myName = "Aidan";
+            this.myName = "Kevin";
         }
         DisplayComponent = __decorate([
             angular2_1.Component({

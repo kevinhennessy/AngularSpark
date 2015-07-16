@@ -10,7 +10,7 @@ class DisplayComponent {
   myName: string;
 
   constructor() {
-    this.myName = "Aidan";
+    this.myName = "Kevin";
   }
 }
 

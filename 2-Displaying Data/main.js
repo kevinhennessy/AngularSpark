@@ -27,14 +27,7 @@ define(["require", "exports", 'angular2/angular2'], function (require, exports, 
                 appInjector: [FriendsService]
             }),
             angular2_1.View({
-                template: '<p>My name: {{ myName }}</p>' +
-                    '<p>Friends:</p>' +
-                    '<ul>' +
-                    '<li *ng-for="#name of names">' +
-                    '{{ name }}' +
-                    '</li>' +
-                    '</ul>' +
-                    '<p *ng-if="names.length > 3">You have many friends!</p>',
+                template: "<p>My name: {{ myName }}</p>\n    <p>Friends and Others:</p>\n    <ul>\n    <li *ng-for=\"#name of names\">\n    {{ name }}\n    </li>\n    </ul>\n    <p *ng-if=\"names.length > 3\">You have many friends!</p>",
                 directives: [angular2_1.NgFor, angular2_1.NgIf]
             }), 
             __metadata('design:paramtypes', [FriendsService])
